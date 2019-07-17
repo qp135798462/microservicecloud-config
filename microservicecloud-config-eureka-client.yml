@@ -4,12 +4,10 @@ spring:
 ---
 server:
   port: 7001
-
 spring:
   profiles: dev
   application:
     name: microservicecloud-config-eureka-client
-
 eureka:
   client:
     #当前的eureka-server自己不注册进服务列表中
@@ -22,12 +20,10 @@ eureka:
 ---
 server:
   port: 7001
-
 spring:
   profiles: test
   application:
     name: microservicecloud-config-eureka-client
-
 eureka:
   client:
     register-with-eureka: false
