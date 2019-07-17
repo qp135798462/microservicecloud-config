@@ -1,0 +1,61 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8001
+spring:
+  profiles: dev
+  application:
+    name: microservicecloud-config-dept-client
+  datasource:
+    # mysql驱动包
+    driver-class-name: com.mysql.jdbc.Driver
+    # 数据库名称
+    url: jdbc:mysql://localhost:3306/clouddb01
+    username: root
+    password: 123456
+    # 当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  #类别名
+  type-aliases-package: com.lm.pojo
+logging:
+  level:
+    #输出sql语句
+    com.lm.mapper: debug
+eureka:
+  client:
+    service-url:
+      #客户端注册进eureka服务列表内
+      defaultZone: http://127.0.0.1:7001/eureka/
+  instance:
+    instance-id: dept-8001.com
+    prefer-ip-address: true
+---
+server:
+  port: 8002
+spring:
+  profiles: test
+  application:
+    name: microservicecloud-config-dept-client
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/clouddb02
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  #类别名
+  type-aliases-package: com.lm.pojo
+logging:
+  level:
+    #输出sql语句
+    com.lm.mapper: debug
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka/
+  instance:
+    instance-id: dept-8002.com
+    prefer-ip-address: true
