@@ -16,7 +16,7 @@ eureka:
     fetch-registry: false
     service-url:
       #设置注册服务和检索服务的地址
-      defaultZone: http://127.0.0.1:7001/eureka/
+      defaultZone: http://127.0.0.1:7001/eureka
 ---
 server:
   port: 7001
@@ -29,4 +29,4 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://127.0.0.1:7001/eureka/
+      defaultZone: http://127.0.0.1:7001/eureka
